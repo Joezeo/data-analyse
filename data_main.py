@@ -1,5 +1,8 @@
 import data_base
 import data_plot
+import pymysql
+from warnings import filterwarnings
+filterwarnings('ignore', category = pymysql.Warning)# 关闭pymysql warning提示
 
 
 class DataMain():
@@ -18,7 +21,7 @@ class DataMain():
             print('3.查看时间与未注册用户的关系')
             cho = int(input('请输入你的选择 -->'))
             if cho == 0:
-                break    
+                break
             if cho == 1:
                 self.dataplot.plot_data(data_dteday, data_cnt)
             if cho == 2:

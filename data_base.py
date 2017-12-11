@@ -32,7 +32,7 @@ localhost:3306/database')
                                         'SELECT registered FROM day',
                                         con=self.engine
                                         )
-            print('连接pandas库成功')
+            print('获取数据成功')
             return (data_dteday, data_cnt, data_casual, data_registered)
         except Exception:
-            print('连接pandas库失败')
+            print('获取数据失败')
