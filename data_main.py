@@ -2,7 +2,6 @@
 import data_base
 import data_plot
 import pymysql
-import matplotlib
 from warnings import filterwarnings
 filterwarnings('ignore', category = pymysql.Warning)# 关闭pymysql warning提示
 
