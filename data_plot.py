@@ -53,23 +53,26 @@ class DataPlot():
         """画数据图：
         画出数据直方图
         """
-        # 将pandas DataFrame 'cnt'列转化为int型整数
-        a['cnt'] = a['cnt'].apply(lambda x: int(x))
-        b['cnt'] = a['cnt'].apply(lambda x: int(x))
-        c['cnt'] = a['cnt'].apply(lambda x: int(x))
+        try:
+            # 将pandas DataFrame 'cnt'列转化为int型整数
+            a['cnt'] = a['cnt'].apply(lambda x: int(x))
+            b['cnt'] = a['cnt'].apply(lambda x: int(x))
+            c['cnt'] = a['cnt'].apply(lambda x: int(x))
 
-        # 将三个DataFrame 'cnt'列求平均值
-        part_1 = a['cnt'].mean()
-        part_2 = b['cnt'].mean()
-        part_3 = c['cnt'].mean()
+            # 将三个DataFrame 'cnt'列求平均值
+            part_1 = a['cnt'].mean()
+            part_2 = b['cnt'].mean()
+            part_3 = c['cnt'].mean()
 
-        # 直方图定义
-        rects =plt.bar(left = (0.5,1.5,2.5), height = (part_1, part_2, part_3),
-                        width = 0.2, align = "center", yerr = 0.000001)
-        plt.title('Weather and average client count relationship')
-        DataPlot.autolabel(rects)
-        plt.xticks((0.5, 1.5, 2.5),('Sunny...', 'Cloudy..', 'Rainy...'))
-        plt.show()
+            # 直方图定义
+            rects =plt.bar(left = (0.5,1.5,2.5), height = (part_1, part_2, part_3),
+                            width = 0.2, align = "center", yerr = 0.000001)
+            plt.title('Weather and average client count relationship')
+            DataPlot.autolabel(rects)
+            plt.xticks((0.5, 1.5, 2.5),('Sunny...', 'Cloudy..', 'Rainy...'))
+            plt.show()
+        except Exception:
+            print('绘图失败')
 
     def autolabel(rects):
         """直方图相关函数
