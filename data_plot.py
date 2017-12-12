@@ -27,7 +27,7 @@ class DataPlot():
         part_3 = c['cnt'].sum()
 
         # 画饼状图所需参数定义
-        labels = [u'weather 1', u'weather 2', u'weather 3']
+        labels = ['weather 1', 'weather 2', 'weather 3']
         sizes = [part_1, part_2, part_3]
         colors = ['red', 'yellowgreen', 'lightskyblue']
         explode = (0, 0, 0)
