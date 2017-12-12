@@ -1,3 +1,4 @@
+# coding=UTF-8
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 import pandas
@@ -14,7 +15,7 @@ localhost:3306/database')
         except Exception:
             print('连接数据库失败')
 
-    def pandas_connect(self):
+    def get_dataI(self):
         try:
             data_dteday = pandas.read_sql(
                                         'SELECT dteday FROM day',
@@ -32,7 +33,29 @@ localhost:3306/database')
                                         'SELECT registered FROM day',
                                         con=self.engine
                                         )
-            print('获取数据成功')
+            print('获取时间相关数据成功')
             return (data_dteday, data_cnt, data_casual, data_registered)
         except Exception:
-            print('获取数据失败')
+            print('获取时间相关数据失败')
+
+    def get_dataII(self):
+        try:
+            data_wea_1 = pandas.read_sql(
+                                        'SELECT cnt FROM day WHERE \
+                                        weathersit = 1',
+                                        con=self.engine
+                                        )
+            data_wea_2 = pandas.read_sql(
+                                        'SELECT cnt FROM day WHERE \
+                                        weathersit = 2',
+                                        con=self.engine
+                                        )
+            data_wea_3 = pandas.read_sql(
+                                        'SELECT cnt FROM day WHERE \
+                                        weathersit = 3',
+                                        con=self.engine
+                                        )
+            print('获取天气相关数据成功')
+            return (data_wea_1, data_wea_2, data_wea_3,)
+        except Exception:
+            print('获取天气相关数据失败')
