@@ -10,8 +10,7 @@ class DataPlot():
         try:
             # 将pandas DataFrame 'str_data'列转化为int型整数
             y[str_data] = y[str_data].apply(lambda z: int(z))
-            data_1 = y
-            plt.plot(x, data_1)
+            plt.plot(x, y)
             plt.show()
         except Exception:
             print('绘图失败')
