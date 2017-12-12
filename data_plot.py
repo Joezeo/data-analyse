@@ -7,6 +7,7 @@ class DataPlot():
         """画数据图：
         画出数据折线图
         """
+        # 将pandas DataFrame 'str_data'列转化为int型整数
         y[str_data] = y[str_data].apply(lambda z: int(z))
         data_1 = y
         plt.plot(x, data_1)
@@ -16,7 +17,7 @@ class DataPlot():
         """画数据图：
         画出数据饼状图
         """
-        # 将pandas DataFrame每一列转化为int型整数
+        # 将pandas DataFrame 'cnt'列转化为int型整数
         a['cnt'] = a['cnt'].apply(lambda x: int(x))
         b['cnt'] = a['cnt'].apply(lambda x: int(x))
         c['cnt'] = a['cnt'].apply(lambda x: int(x))
