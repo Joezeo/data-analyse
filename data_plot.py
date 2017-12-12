@@ -7,8 +7,8 @@ class DataPlot():
         """画数据图：
         画出数据折线图
         """
-        # 将pandas DataFrame 'str_data'列转化为int型整数
         try:
+            # 将pandas DataFrame 'str_data'列转化为int型整数
             y[str_data] = y[str_data].apply(lambda z: int(z))
             data_1 = y
             plt.plot(x, data_1)
@@ -68,13 +68,13 @@ class DataPlot():
             rects =plt.bar(left = (0.5,1.5,2.5), height = (part_1, part_2, part_3),
                             width = 0.2, align = "center", yerr = 0.000001)
             plt.title('Weather and average client count relationship')
-            DataPlot.autolabel(rects)
+            DataPlot().autolabel(rects)
             plt.xticks((0.5, 1.5, 2.5),('Sunny...', 'Cloudy..', 'Rainy...'))
             plt.show()
         except Exception:
             print('绘图失败')
 
-    def autolabel(rects):
+    def autolabel(self, rects):
         """直方图相关函数
         直方图上显示具体的数字（自动编号）
         """
