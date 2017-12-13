@@ -5,13 +5,13 @@ import pandas
 
 
 class DataBase():
-    def __init__(self):
+    def __init__(self, passwd):
         """初始化：
         建立数据库连接
         """
         try:
-            self.engine = create_engine('mysql+pymysql://root:funkey2012@\
-localhost:3306/database')
+            self.engine = create_engine('mysql+pymysql://root:{}@\
+localhost:3306/database'.format(passwd))
             # self.DBSession = sessionmaker(bind=self.engine)
             # self.session = self.DBSession()
             print('连接数据库成功')

@@ -11,7 +11,8 @@ class DataMain():
         """初始化：
         建立DataBase对象，DataPlot对象
         """
-        self.database = data_base.DataBase()
+        passwd = str(input('请输入密码 -->'))
+        self.database = data_base.DataBase(passwd)
         self.dataplot = data_plot.DataPlot()
 
     def start(self):
