@@ -12,5 +12,5 @@
   
   ---
   
-This is just a homework project, and this homework is not mine.  
+This is just a homework project.  
 Analysis of more than 700 data of the sharing cycle.Draw line drawing, pie chart, histogram of data.  
